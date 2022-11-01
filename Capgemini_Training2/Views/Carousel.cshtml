@@ -1,0 +1,68 @@
+﻿@using Sitecore.Mvc;
+@using Capgemini_Training2.Models;
+@model Basic
+
+@if (Model != null && Model.slide != null && Model.slide.Count > 0)
+{
+    <!-- projects -->
+    <div class="projects">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>@Model.Text</h2>
+                        <span>@Model.Description</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="proj" class="carousel slide projects_ban" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            @for (var counter = 0; counter < Model.slide.Count; counter++)
+                            {
+                                var activeClass = counter == 0 ? "active" : String.Empty;
+                                <li data-target="#proj" data-slide-to="@counter" class="@activeClass" ></li>
+                            }
+                        </ol>
+                        <div class="carousel-inner">
+                            @for (var counter = 0; counter < Model.slide.Count; counter++)
+                            {
+                                var activeClass = counter == 0 ? "active" : String.Empty;
+                                <div class="carousel-item @activeClass">
+                                    <div class="container-fluid">
+                                        <div class="carousel-caption relative3">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="project">
+                                                        <div class="project_img">
+                                                            @*<figure><img src="images/project_img.png" alt="#" /></figure>*@
+                                                            @Model.slide[counter].Image1
+                                                        </div>
+                                                        <div id="pro_ho" class="project_text">
+                                                            <h3>@Model.slide[counter].Carousel_Text</h3>
+                                                            <p>@Model.slide[counter].Carousel_Description</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <a class="carousel-control-prev" href="#proj" role="button" data-slide="prev">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="sr-only">@Model.Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#proj" role="button" data-slide="next">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                <span class="sr-only">@Model.Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

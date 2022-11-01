@@ -1,0 +1,80 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+
+@if (Model != null && Model.Item != null)
+{
+
+<section id="team" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">@Html.Sitecore().Field("Text", Model.Item)</h2>
+                <h3 class="section-subheading text-muted">@Html.Sitecore().Field("Description", Model.Item)</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="team-member">
+                    <div class="image1">@Html.Sitecore().Field("Photo1", Model.Item)</div>
+                    @*<img src="@Html.Sitecore().Field("Image1", Model.Item)" class="img-responsive img-circle" alt="">*@
+                    <h4>@Html.Sitecore().Field("Name1", Model.Item)</h4>
+                    <p class="text-muted">@Html.Sitecore().Field("Role1", Model.Item)</p>
+                    <ul class="list-inline social-buttons">
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+                    <div class="image2">@Html.Sitecore().Field("Photo2", Model.Item)</div>
+                    <h4>@Html.Sitecore().Field("Name2", Model.Item)</h4>
+                    <p class="text-muted">@Html.Sitecore().Field("Role2", Model.Item)r</p>
+                    <ul class="list-inline social-buttons">
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+                    <div class="image3">@Html.Sitecore().Field("Photo3", Model.Item)</div>
+                    <h4>@Html.Sitecore().Field("Name3", Model.Item)</h4>
+                    <p class="text-muted">@Html.Sitecore().Field("Role3", Model.Item)</p>
+                    <ul class="list-inline social-buttons">
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p class="large text-muted">@Html.Sitecore().Field("End Description", Model.Item)</p>
+            </div>
+        </div>
+    </div>
+</section>
+}

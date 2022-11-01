@@ -1,0 +1,39 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+
+@if (Model != null && Model.Item != null)
+{
+    <!-- staff -->
+    <div class="staff_main">
+        <div class="container_staff">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>@Html.Sitecore().Field("Title",Model.Item)</h2>
+                        <span>@Html.Sitecore().Field("Description", Model.Item)</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="staff">
+                        <div class="man">
+                            <i>@Html.Sitecore().Field("Image", Model.Item)</i>
+                        </div>
+                        <div class="social_icon_main">
+                            <h4>Available</h4>
+                            <ul class="social_icon_staff text_align_center  ">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+    </div>
+    <!-- end staff -->
+}

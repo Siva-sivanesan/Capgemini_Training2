@@ -1,0 +1,45 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+
+@if (Model != null && Model.Item != null)
+{
+       <div class="choose">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-6 col-md-7 ">
+                       <div class="titlepage">
+
+
+                           <h2> @Html.Sitecore().Field("Choose title", Model.Item) </h2>
+                           <p> @Html.Sitecore().Field("Choose description", Model.Item) </p>
+                           <div class="col-md-5">
+                                <div class="choose_img_bg">
+                                    <picture>@Html.Sitecore().Field("Choose image bg", Model.Item)</picture>
+                                </div>
+                            </div>
+
+                           <div class="award">
+                               <div id="awa_ho" class="award_icon text_align_center">
+                                   <i>
+                                       @Html.Sitecore().Field("Choose image 1", Model.Item)
+                                   </i>
+                                   <strong>client satisfaction</strong>
+                               </div>
+                               <div id="awa_ho" class="award_icon text_align_center">
+                                   <i> @Html.Sitecore().Field("Choose image 2", Model.Item) </i>
+                                   <strong>award</strong>
+                               </div>
+                               <div id="awa_ho" class="award_icon text_align_center">
+                                   <i> @Html.Sitecore().Field("Choose image 3", Model.Item) </i>
+                                   <strong>Trustable</strong>
+                               </div>
+
+                           </div>
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+     }
